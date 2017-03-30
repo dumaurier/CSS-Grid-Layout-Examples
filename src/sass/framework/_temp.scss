@@ -1,0 +1,342 @@
+body{
+ background: $grey-ghost;
+}
+
+///////////////////////////////////
+/// BASIC GRID
+////////////////////////////////////
+
+.grid-container{
+ max-width: 80vw;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: 20vw auto 300px;
+ grid-template-rows: 100px 30vh minmax(150px, auto) minmax(120px, auto);
+ grid-gap: 34px 20px;
+}
+
+.item{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: $color-red;
+ color: #fff;
+ border: 3px solid $grey;
+}
+
+h1{
+ grid-column: 1 / 4;
+}
+
+.item:nth-of-type(odd){
+ background: $color-blue;
+}
+
+
+@supports not (display:grid){
+ .grid-container{
+  display: flex;
+  flex-flow: row wrap;
+ }
+
+ h1{
+  width: 100%;
+ }
+
+ .item{
+  height: 100px;
+  width: 33%;
+  order: 2;
+ }
+
+ .item-6{
+  order: 1;
+ }
+}
+
+///////////////////////////////////
+/// GRID AREA DEMO
+////////////////////////////////////
+
+.grid-area > *{
+ position: relative;
+}
+
+.grid-area > *::before{
+ position: absolute;
+ content: 'grid-area=' attr(class);
+ color: white;
+ top: 10px;
+ left: 10px;
+}
+
+.grid-area{
+ background: $grey-light;
+ display: grid;
+ max-width: 1200px;
+ height: 100vh;
+ margin: 0 auto;
+ grid-template-columns: 300px auto;
+ grid-template-rows: repeat(4, auto);
+ grid-gap: 20px;
+ grid-template-areas:
+  " header header  "
+  " nav content  "
+  " nav content  "
+  " footer footer ";
+}
+
+.header{
+ grid-area: header;
+ background: $color-orange;
+}
+
+.nav{
+ grid-area: nav;
+ background: $color-red;
+ padding: 40px 20px;
+
+ a{
+  color: white;
+  font-size: 1.2rem;
+ }
+}
+
+.content{
+ grid-area: content;
+ background: $color-white-dirty;
+ display: grid;
+ grid-template-columns: repeat(2, auto);
+ grid-template-rows: repeat(2, minmax( 200px, auto));
+ grid-gap: 20px;
+}
+
+.card{
+ padding: 10px;
+ background: $color-blue-dark;
+ color: $color-white-dirty;
+}
+
+footer{
+ grid-area: footer;
+ background: $color-blue;
+ min-height: 120px;
+}
+
+///////////////////////////////////
+/// SRP DEMO
+////////////////////////////////////
+.srp{
+ background: $grey-ghost;
+ display: grid;
+ max-width: 1200px;
+ margin: 0 auto;
+ grid-template-columns: 220px auto 300px;
+ grid-template-rows: 70px auto 100px;
+ grid-gap: 20px;
+ grid-template-areas:
+  " header header header "
+  " filter results sidebar "
+  " filter results sidebar "
+  " footer footer footer";
+}
+
+.srp .header{
+ height: 70px;
+ background: $grey-dark;
+ grid-area: header;
+ display: flex;
+ position: sticky;
+ top: 0;
+
+ h1{
+  font-size: 2rem;
+  text-align: left;
+  margin: 0;
+  padding: 0 2rem;
+  color: $color-white-dirty;
+  align-self: center;
+ }
+}
+
+.srp .filters{
+ grid-area: filter;
+
+ details{
+  padding: .5rem;
+ }
+
+ form{
+  margin: 0;
+  padding: 0;
+
+  .btn{
+   width: 100%;
+   padding: 10px;
+   text-align: center;
+   background: $grey-dark;
+   border: none;
+   color: $color-white;
+   font-weight: 700;
+   margin: 1rem 0 0 0;
+  }
+ }
+
+ fieldset{
+  padding: 0;
+  border: none;
+ }
+
+ legend{
+  margin: 0;
+  padding: 0;
+  @include font-size(1.2);
+  line-height: 1;
+  font-weight: 700;
+ }
+}
+
+.srp .results{
+ grid-area: results;
+ display: grid;
+ grid-template-columns: 4fr 4fr 3fr;
+ grid-template-rows: auto 60px auto;
+ grid-auto-rows: min-content;
+ grid-template-areas:
+ " title title title "
+ " count toggle alert "
+ " result result result "
+ " result result result "
+ ;
+ grid-gap: 10px;
+
+ .search-title{
+  grid-area: title;
+
+  h1{
+   margin: 0;
+   padding: 0;
+   @include font-size(1.2);
+   line-height: 1;
+   text-align: left;
+  }
+ }
+
+ .search-count{
+  grid-area: count;
+ }
+
+ .search-toggle{
+  grid-area: toggle;
+
+  fieldset{
+   padding: 0;
+   border: none;
+
+   label{
+    display: inline-block;
+    padding: 0;
+   }
+  }
+ }
+
+ .alert-trigger{
+  grid-area: alert;
+  background: $grey-dark;
+  color: $color-white;
+  font-weight: 700;
+ }
+
+ .result-block{
+  border: 1px solid $grey;
+  grid-column: 1 / -1;
+  padding: .875rem;
+  display: grid;
+  grid-template-columns: 2fr 6fr 1fr;
+  grid-template-areas:
+  " logo title date "
+  " . company . "
+  " . address . "
+  ;
+
+  .logo{
+   grid-area: logo;
+  }
+
+  h2{
+   grid-area: title;
+   @include font-size(1);
+   line-height: 1;
+   margin: 0;
+   padding: 0;
+  }
+
+  strong{
+   @include font-size(.8125);
+   grid-area: company;
+  }
+
+  address{
+   @include font-size(.8125);
+   grid-area: address;
+   font-style: normal;
+  }
+
+  time{
+   grid-area: date;
+  }
+ }
+}
+
+
+.srp .sidebar{
+ grid-area: sidebar;
+ display: flex;
+ flex-flow: column nowrap;
+
+ * + *{
+  margin-top: 10px;
+ }
+
+ .sidebar-item{
+
+  h5{
+   padding: 0;
+   margin: 0;
+  }
+
+  border: 1px solid $grey;
+  padding: .875rem;
+ }
+
+ .ad{
+  padding: 0;
+  background: $grey-dark;
+  color: $color-white;
+  min-height: 300px;
+ }
+}
+
+.job-alert-modal{
+ padding: 1rem;
+
+ &::backdrop{
+  background: rgba(255,255,255,.8);
+  filter: blur(5px);
+ }
+
+ fieldset{
+  border: none;
+  padding: 0;
+ }
+
+ label:last-of-type{
+  margin-bottom: 1rem;
+ }
+}
+
+
+.srp .footer{
+ background: $grey-dark;
+ grid-area: footer;
+}

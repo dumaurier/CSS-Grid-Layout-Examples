@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
+
+  <link rel="canonical" href="" />
+  <link rel="icon" href="/favicon.ico">
+  <title>Grid Demos - Search Results Page</title>
+
+  <!-- Static Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="follow, index"  />
+
+  
+
+  
+
+  <style>
+  
+  </style>
+
+  <script>
+  loadCSS('/static-assets/css/base-fast.css');
+  </script>
+
+</head>
+
+
+  <body>
+
+        <main class="container srp" id="main">
+ <header class="header">
+  <h1>Workopolis</h1>
+ </header>
+
+ <div class="filters">
+   <form>
+    <fieldset>
+     <legend>
+      Filter Results
+     </legend>
+     <div class="filter-group">
+      <details open>
+       <summary>
+        Locations
+       </summary>
+       <ul>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Toronto, ON
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Montreal, ON
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Halifax, NS
+         </label>
+        </li>
+       </ul>
+      </details>
+     </div>
+     <div class="filter-group">
+      <details>
+       <summary>
+        Categories
+       </summary>
+       <ul>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Technology
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Marketing
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Finance
+         </label>
+        </li>
+       </ul>
+      </details>
+     </div>
+     <div class="filter-group">
+      <details>
+       <summary>
+        Job Type
+       </summary>
+       <ul>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Full Time
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Part Time
+         </label>
+        </li>
+        <li>
+         <label>
+           <input type="checkbox"  />
+           Contract
+         </label>
+        </li>
+       </ul>
+      </details>
+     </div>
+     <input class="btn" type="submit" value="Apply Filters" />
+    </fieldset>
+   </form>
+
+
+ </div>
+
+ <section class="results">
+  <header class="search-title">
+   <h1>Front End Developer</h1>
+  </header>
+  <div class="search-count">
+   <p>
+    Showing 1-10 of 300 results.
+   </p>
+  </div>
+  <div class="search-toggle">
+   <form>
+    <fieldset>
+     <label>
+      <input type="radio" name="toggle" value="Relevance" checked/>
+      Relevance
+     </label>
+     <label>
+      <input type="radio" name="toggle" value="Newest" />
+      Newest
+     </label>
+    </fieldset>
+   </form>
+  </div>
+  <button class="alert-trigger js-alert">Create Alert</button>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>Workopolis Inc.</strong>
+    <address>
+     1 Yonge Street, Toronto, ON
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/d1_99/logo_en_20161007030519_88x31.jpg" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End / Web Developer</h2>
+    <strong>Cara Operations Limited</strong>
+    <address>
+     Vaughan, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/8RT3_754028/logo_en_20161007030528_88x31.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>RBC</strong>
+    <address>
+     Toronto, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/UrH_64410/logo_en_20161007030521.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>Workopolis Inc.</strong>
+    <address>
+     1 Yonge Street, Toronto, ON
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/d1_99/logo_en_20161007030519_88x31.jpg" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End / Web Developer</h2>
+    <strong>Cara Operations Limited</strong>
+    <address>
+     Vaughan, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/8RT3_754028/logo_en_20161007030528_88x31.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>RBC</strong>
+    <address>
+     Toronto, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/UrH_64410/logo_en_20161007030521.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>Workopolis Inc.</strong>
+    <address>
+     1 Yonge Street, Toronto, ON
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/d1_99/logo_en_20161007030519_88x31.jpg" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End / Web Developer</h2>
+    <strong>Cara Operations Limited</strong>
+    <address>
+     Vaughan, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/8RT3_754028/logo_en_20161007030528_88x31.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>RBC</strong>
+    <address>
+     Toronto, Ontario
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/UrH_64410/logo_en_20161007030521.gif" />
+    </div>
+   </article>
+
+   <article class="result-block">
+    <h2>Front End Developer</h2>
+    <strong>Workopolis Inc.</strong>
+    <address>
+     1 Yonge Street, Toronto, ON
+    </address>
+    <time>Today</time>
+    <div class="logo">
+     <img src="http://logo.workopolis.com/d1_99/logo_en_20161007030519_88x31.jpg" />
+    </div>
+   </article>
+
+  </section>
+
+ <aside class="sidebar">
+  <div class="sidebar-item recently-viewed">
+   <h5>Recently View Jobs</h5>
+   <ul>
+    <li>
+     <a href>
+      Job Title One
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Two
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Three
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Four
+     </a>
+    </li>
+   </ul>
+  </div>
+  <div class="sidebar-item ad">
+   <h1>
+    ADS ADS ADS
+   </h1>
+  </div>
+  <div class="sidebar-item recently-viewed">
+   <h5>Recommended Searches</h5>
+   <ul>
+    <li>
+     <a href>
+      Job Title One
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Two
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Three
+     </a>
+    </li>
+    <li>
+     <a href>
+      Job Title Four
+     </a>
+    </li>
+   </ul>
+  </div>
+ </aside>
+
+ <footer class="footer">
+
+ </footer>
+</main>
+
+<dialog id="job-alert" class="job-alert-modal">
+
+ <form method="dialog">
+  <fieldset>
+   <legend>
+    Create Your Job Alert
+   </legend>
+   <label>Job Alert Name:
+    <input type="text" />
+   </label>
+   <label>Your Email Address:
+    <input type="email" />
+   </label>
+   <button class="js-cancel modal-cancel" id="cancel">Cancel</button>
+   <button class="btn" type="submit">Creat Alert</button>
+  </fieldset>
+ </form>
+</dialog>
+
+<script>
+(function() {
+  var alertTrigger = document.querySelector('.js-alert');
+  var cancelButton = document.querySelector('.js-cancel');
+  var alertModal = document.getElementById('job-alert');
+
+  // Update button opens a modal dialog
+  alertTrigger.addEventListener('click', function() {
+    alertModal.showModal();
+  });
+
+  // Form cancel button closes the dialog box
+  cancelButton.addEventListener('click', function() {
+    alertModal.close();
+  });
+})();
+
+
+</script>
+
+
+  </body>
+
+</html>
