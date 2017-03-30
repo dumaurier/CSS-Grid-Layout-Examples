@@ -1,1 +1,1 @@
-# just a portfolio site. built with jekyll.
+# CSS Grid Layout Examples
