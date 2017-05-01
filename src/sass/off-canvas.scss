@@ -12,7 +12,7 @@
 @import "framework/buttons";
 
 body{
-  background: #fafafa;
+  background: lighten($color-yellow, 25%);
 }
 
 .grid{
@@ -20,6 +20,8 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 80px minmax(calc(100vh - 200px), auto) 120px;
+  overflow: hidden;
+  background: $grey-ghost;
 }
 
 .main-header{
@@ -38,6 +40,14 @@ body{
     margin: 0 1rem;
     padding: 0;
     color: $grey-dark;
+
+    &:first-letter{
+      color: $color-red;
+      font-size: 2.2rem;
+      letter-spacing: -6px;
+      font-weight: 900;
+      font-family: Gill Sans;
+    }
   }
 
   button{
@@ -142,7 +152,7 @@ body{
 }
 
 .tg-item{
-  flex: 1;
+  flex: 0 0 30%;
   padding: 1rem;
 }
 
@@ -157,6 +167,7 @@ body{
 
   h2{
     color: $color-red;
+    text-align: center;
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px rgba(0,0,0,.5);
@@ -197,7 +208,7 @@ body{
   .main-nav{
     grid-column: 1;
     grid-row: 2 / -1;
-    transform: translateX(-240px);
+    transform: translateX(-250px);
     transition: transform .2s ease;
     will-change: transform;
     z-index: 200;
@@ -232,12 +243,22 @@ body{
   .tasty-grid{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .tg-item{
-    flex: 1 0 30%;
+    flex: 0 0 25%;
     padding: 1rem;
+  }
+}
+
+@media screen and ( min-width: 75em ){
+  .grid{
+    min-width: 75rem;
+    max-width: 90vw;
+    margin: 0 auto;
+    border-left: 2px solid $grey;
+    border-right: 2px solid $grey;
   }
 }
 
