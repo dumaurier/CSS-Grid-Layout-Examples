@@ -1,0 +1,93 @@
+---
+title: Grid Demos - Off-Canvas Navigation
+permalink: "/off-canvas/"
+pagejs: home.js
+customCSS: off-canvas.css
+layout: clean
+---
+
+<main class="grid">
+  <header class="main-header">
+    <button class="js-navigation btn">
+      Navigation Menu
+    </button>
+    <h1>Street Meat Inc.</h1>
+  </header>
+  <nav class="main-nav js-nav" aria-hidden="true">
+    <ul>
+      <li>
+        <a href>Home</a>
+      </li>
+      <li>
+        <a href>Hot Dogs</a>
+      </li>
+      <li>
+        <a href>Locations</a>
+      </li>
+      <li>
+        <a href>Inside the Bun</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="main-content">
+    <section class="sweet-content hero-block">
+      <h2>We are the hot dog you need.</h2>
+      <p>
+        because we sell hot dogs on the street. and that is usually where you want one. on the street.
+      </p>
+      <a class="btn">Find a location</a>
+      <img class="hero-dog" src="{{ site.baseurl }}/static-assets/images/hero-okay.jpg" alt="HOT DOG"  />
+    </section>
+    <div class="tasty-grid">
+      <div class="tg-item">
+        <h3>Why Hot Dogs</h3>
+        <p>
+          Hot dogs are great. Especially when you get to eat them on the street.
+        </p>
+      </div>
+      <div class="tg-item">
+        <h3>Toppings</h3>
+        <p>
+          Ketchup, relish, mustard, saurkraut. And 20 others. Things can get weird. Let them get weird.
+        </p>
+      </div>
+      <div class="tg-item">
+        <h3>Flavour Profile</h3>
+        <p>
+          The sweet taste of all beef tube steak mixed with the aromas of the city. Glorious!
+        </p>
+      </div>
+    </div>
+    <section class="hotdog-map">
+      <h2>Exciting Hot Dog Map!</h2>
+      <img src="{{ site.baseurl }}/static-assets/images/hotdogmap.png" alt="a map of hot dog locations in downtown toronto" />
+
+    </section>
+  </div>
+  <footer class="main-footer">
+    &copy;2017 My Own Damn Self
+  </footer>
+</main>
+
+<script>
+  var navTrigger = document.querySelector('.js-navigation');
+  var navCont = document.querySelector('.js-nav');
+  var heroBlock = document.querySelector('.hero-block');
+
+  navTrigger.addEventListener('click', function(){
+    navCont.classList.toggle('is-active');
+    heroBlock.classList.toggle('nav-active');
+
+    if(navCont.classList.contains('is-active')){
+      navCont.setAttribute("aria-hidden", "false")
+    }
+    else{
+      navCont.setAttribute("aria-hidden", "true")
+    }
+
+  })
+
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    navCont.setAttribute("aria-hidden", "false");
+  }
+</script>

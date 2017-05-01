@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script>
+    // https://github.com/filamentgroup/loadCSS
+    !function(e){"use strict"
+    var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+    return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+    "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+  </script>
+
+  <link rel="canonical" href="" />
+  <link rel="icon" href="/favicon.ico">
+  <title>Grid Demos - Off-Canvas Navigation</title>
+
+  <!-- Static Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="follow, index"  />
+
+  
+
+  
+
+  <style>
+  
+  </style>
+
+  <script>
+  loadCSS('/static-assets/css/base-fast.css');
+  </script>
+
+  
+  <script>
+  loadCSS('/static-assets/css/off-canvas.css');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+        <main class="grid">
+  <header class="main-header">
+    <button class="js-navigation btn">
+      Navigation Menu
+    </button>
+    <h1>Street Meat Inc.</h1>
+  </header>
+  <nav class="main-nav js-nav" aria-hidden="true">
+    <ul>
+      <li>
+        <a href>Home</a>
+      </li>
+      <li>
+        <a href>Hot Dogs</a>
+      </li>
+      <li>
+        <a href>Locations</a>
+      </li>
+      <li>
+        <a href>Inside the Bun</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="main-content">
+    <section class="sweet-content hero-block">
+      <h2>We are the hot dog you need.</h2>
+      <p>
+        because we sell hot dogs on the street. and that is usually where you want one. on the street.
+      </p>
+      <a class="btn">Find a location</a>
+      <img class="hero-dog" src="/static-assets/images/hero-okay.jpg" alt="HOT DOG"  />
+    </section>
+    <div class="tasty-grid">
+      <div class="tg-item">
+        <h3>Why Hot Dogs</h3>
+        <p>
+          Hot dogs are great. Especially when you get to eat them on the street.
+        </p>
+      </div>
+      <div class="tg-item">
+        <h3>Toppings</h3>
+        <p>
+          Ketchup, relish, mustard, saurkraut. And 20 others. Things can get weird. Let them get weird.
+        </p>
+      </div>
+      <div class="tg-item">
+        <h3>Flavour Profile</h3>
+        <p>
+          The sweet taste of all beef tube steak mixed with the aromas of the city. Glorious!
+        </p>
+      </div>
+    </div>
+    <section class="hotdog-map">
+      <h2>Exciting Hot Dog Map!</h2>
+      <img src="/static-assets/images/hotdogmap.png" alt="a map of hot dog locations in downtown toronto" />
+
+    </section>
+  </div>
+  <footer class="main-footer">
+    &copy;2017 My Own Damn Self
+  </footer>
+</main>
+
+<script>
+  var navTrigger = document.querySelector('.js-navigation');
+  var navCont = document.querySelector('.js-nav');
+  var heroBlock = document.querySelector('.hero-block');
+
+  navTrigger.addEventListener('click', function(){
+    navCont.classList.toggle('is-active');
+    heroBlock.classList.toggle('nav-active');
+
+    if(navCont.classList.contains('is-active')){
+      navCont.setAttribute("aria-hidden", "false")
+    }
+    else{
+      navCont.setAttribute("aria-hidden", "true")
+    }
+
+  })
+
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    navCont.setAttribute("aria-hidden", "false");
+  }
+</script>
+
+
+  </body>
+
+</html>

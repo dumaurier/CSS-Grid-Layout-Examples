@@ -53,7 +53,7 @@ gulp.task('browser-sync', ['jekyll-watch', 'sass-fast'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass-fast', function () {
-    return gulp.src('src/sass/base-fast.scss')
+    return gulp.src('src/sass/*.scss')
         .pipe(sass({
             outputStyle: 'compressed',
             includePaths: ['scss'],
@@ -66,6 +66,8 @@ gulp.task('sass-fast', function () {
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('_site/static-assets/css'));
 });
+
+
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)

@@ -36,4 +36,10 @@
   loadCSS('{{ site.baseurl }}/static-assets/css/base-fast.css');
   </script>
 
+  {% if page.customCSS %}
+  <script>
+  loadCSS('{{ site.baseurl }}/static-assets/css/{{ page.customCSS }}');
+  </script>
+  {% endif %}
+
 </head>
