@@ -46,34 +46,40 @@
 
         <main class="grid">
   <header class="main-header">
-    <button class="js-navigation btn">
+    <button class="js-navigation btn" aria-haspopup="true" aria-owns="main-nav">
       Menu
     </button>
-    <h1>Street Meat Inc.</h1>
+    <h1>Tuber&reg;</h1>
   </header>
-  <nav class="main-nav js-nav" aria-hidden="true">
+  <nav class="main-nav js-nav" aria-hidden="true" id="main-nav">
     <ul>
       <li>
         <a href>Home</a>
       </li>
       <li>
-        <a href>Hot Dogs</a>
+        <a href>Hot dogs</a>
       </li>
       <li>
-        <a href>Locations</a>
+        <a href>Place your order</a>
       </li>
       <li>
-        <a href>Inside the Bun</a>
+        <a href>Inside the bun</a>
+      </li>
+      <li>
+        <a href>Sign in</a>
+      </li>
+      <li>
+        <a href>Become a Tuber&reg;</a>
       </li>
     </ul>
   </nav>
   <div class="main-content">
     <section class="sweet-content hero-block">
-      <h2>We are the hot dog you need.</h2>
+      <h2>Tuber. Uber For Hot Dogs.</h2>
       <p>
-        because we sell hot dogs on the street. and that is usually where you want one. on the street.
+        Get the hot dog you need when you need it wherever you are. This is normal.
       </p>
-      <a class="btn">Find a location</a>
+      <a class="btn">Order Now</a>
       <img class="hero-dog" src="/static-assets/images/hero-okay.jpg" alt="HOT DOG"  />
     </section>
     <div class="tasty-grid">
@@ -97,7 +103,10 @@
       </div>
     </div>
     <section class="hotdog-map">
-      <h2>Exciting Hot Dog Map!</h2>
+      <h2>Real Time Hot Dog Tracker&reg;</h2>
+      <p>
+        Our elite network of On Demand Hot Dog Delivery Partners&reg; are always on the move delivering the best tube steaks around.
+      </p>
       <img src="/static-assets/images/hotdogmap-small.png" srcset="/static-assets/images/hotdogmap.png 720w" alt="a map of hot dog locations in downtown toronto" />
 
     </section>
@@ -110,11 +119,11 @@
 <script>
   var navTrigger = document.querySelector('.js-navigation');
   var navCont = document.querySelector('.js-nav');
-  var heroBlock = document.querySelector('.hero-block');
+  var mainContent = document.querySelector('.main-content');
 
   navTrigger.addEventListener('click', function(){
     navCont.classList.toggle('is-active');
-    heroBlock.classList.toggle('nav-active');
+    mainContent.classList.toggle('nav-active');
 
     if(navCont.classList.contains('is-active')){
       navCont.setAttribute("aria-hidden", "false")
