@@ -60,8 +60,8 @@ body{
 }
 
 .main-nav{
-  grid-row: 2 / -1;
-  grid-column: 1 / -1;
+  grid-row: 2;
+  grid-column: 1;
   background: $grey-ghost;
   transform: translateX(-100%);
   z-index: 200;
@@ -203,19 +203,6 @@ body{
 @media screen and ( min-width: 45em ) {
   .grid{
     grid-template-columns: 240px repeat(4, 1fr);
-  }
-
-  .main-nav{
-    grid-column: 1;
-    grid-row: 2 / -1;
-    transform: translateX(-250px);
-    transition: transform .2s ease;
-    will-change: transform;
-    z-index: 200;
-
-    &.is-active{
-      transform: translateX(0);
-    }
   }
 
   .hero-block h2{

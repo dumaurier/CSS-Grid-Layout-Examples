@@ -8,7 +8,7 @@ layout: clean
 
 <main class="grid">
   <header class="main-header">
-    <button class="js-navigation btn" aria-haspopup="true" aria-owns="main-nav">
+    <button class="js-navigation btn" aria-haspopup="true" aria-owns="main-nav" aria-expanded="false">
       Menu
     </button>
     <h1>Tuber&reg;</h1>
@@ -54,7 +54,7 @@ layout: clean
       <div class="tg-item">
         <h5>Toppings</h5>
         <p>
-          Ketchup, relish, mustard, saurkraut. And 20 others. Things can get weird. Let them get weird.
+          Ketchup,  relish, mustard, saurkraut. And 20 others. Things can get weird. Let them get weird.
         </p>
       </div>
       <div class="tg-item">
@@ -69,7 +69,12 @@ layout: clean
       <p>
         Our elite network of On Demand Hot Dog Delivery Partners&reg; are always on the move delivering the best tube steaks around.
       </p>
-      <img src="{{ site.baseurl }}/static-assets/images/hotdogmap-small.png" srcset="{{ site.baseurl }}/static-assets/images/hotdogmap.png 720w" alt="a map of hot dog locations in downtown toronto" />
+      <img src="{{ site.baseurl }}/static-assets/images/hotdogmap-small.png"
+           srcset="{{ site.baseurl }}/static-assets/images/hotdogmap.jpg 1200w"
+           sizes="(max-width: 320px) 100px,
+            (max-width: 1000px) 100%,
+            1000px"
+           alt="a map of hot dog locations in downtown toronto" />
 
     </section>
   </div>
@@ -89,9 +94,11 @@ layout: clean
 
     if(navCont.classList.contains('is-active')){
       navCont.setAttribute("aria-hidden", "false")
+      navTrigger.setAttribute("aria-expanded", "true")
     }
     else{
       navCont.setAttribute("aria-hidden", "true")
+      navTrigger.setAttribute("aria-expanded", "false")
     }
 
   })
